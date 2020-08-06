@@ -638,8 +638,8 @@ export default class ImageGallery extends React.Component {
           onFocus={onMouseOver}
           onMouseLeave={onMouseLeave}
           role="button"
-        >
-          {showItem ? handleRenderItem(item) : <div style={{ height: '100%' }} />}
+          >
+              {showItem ? handleRenderItem(item, this.isFullscreen) : <div style={{ height: '100%' }} />}
         </div>
       );
 
@@ -1261,7 +1261,7 @@ export default class ImageGallery extends React.Component {
     }
   }
 
-  renderItem(item) {
+  renderItem(item, notused) {
     const { isFullscreen } = this.state;
     const { onImageError } = this.props;
     const handleImageError = onImageError || this.handleImageError;
